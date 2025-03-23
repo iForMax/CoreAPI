@@ -1,0 +1,4 @@
+name: WysternLobby
+version: '${project.version}'
+main: firas.coreapi.CoreAPI
+author: Webmasters

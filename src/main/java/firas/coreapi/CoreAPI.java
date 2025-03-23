@@ -3,9 +3,10 @@ package firas.coreapi;
 
 import firas.coreapi.interfaces.StaffModeable;
 import lombok.Setter;
+import org.bukkit.plugin.java.JavaPlugin;
 
 @Setter
-public class CoreAPI {
+public class CoreAPI extends JavaPlugin {
 
     private static CoreAPI instance;
 
@@ -23,5 +24,10 @@ public class CoreAPI {
             throw new IllegalStateException("StaffMode has not been initialized!");
         }
         return staffMode;
+    }
+
+    @Override
+    public void onEnable() {
+        System.out.println("API Enabled");
     }
 }
