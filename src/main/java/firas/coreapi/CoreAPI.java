@@ -2,20 +2,15 @@ package firas.coreapi;
 
 
 import firas.coreapi.interfaces.StaffModeable;
+import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @Setter
 public class CoreAPI extends JavaPlugin {
 
+    @Getter
     private static CoreAPI instance;
-
-    public static CoreAPI getInstance() {
-        if (instance == null) {
-            instance = new CoreAPI();
-        }
-        return instance;
-    }
 
     private StaffModeable staffMode;
 
@@ -28,6 +23,7 @@ public class CoreAPI extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        instance = this;
         System.out.println("API Enabled");
     }
 }
