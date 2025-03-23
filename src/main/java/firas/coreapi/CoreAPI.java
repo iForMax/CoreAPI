@@ -2,7 +2,9 @@ package firas.coreapi;
 
 
 import firas.coreapi.interfaces.StaffModeable;
+import lombok.Setter;
 
+@Setter
 public class CoreAPI {
 
     private static CoreAPI instance;
@@ -15,10 +17,6 @@ public class CoreAPI {
     }
 
     private StaffModeable staffMode;
-
-    public void setStaffMode(StaffModeable staffMode) {
-        this.staffMode = staffMode;
-    }
 
     public StaffModeable getStaffMode() {
         if (staffMode == null) {
