@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface WorldOptionsGetter {
     boolean isEnable();
+    boolean isBuild();
     boolean isProtectLeavesTree();
     boolean isTrapdoorAndDoorsAndGate();
     boolean isButtons();
