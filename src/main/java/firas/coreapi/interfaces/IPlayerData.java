@@ -18,7 +18,12 @@ public interface IPlayerData {
 
     void deleteProfile(String nickname, Player player);
     void addPlayerNickname(PlayerNickname playerNickname);
-
+    void addExp(int xp);
+    int getLevel();
+    int getExp();
+    int getNextLevel();
+    void addScrap(int scrap);
+    int getScrap();
     IPlayerData load();
     void save();
     String getBadges();
