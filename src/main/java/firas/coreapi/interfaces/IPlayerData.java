@@ -21,7 +21,8 @@ public interface IPlayerData {
     void addExp(int xp);
     int getLevel();
     int getExp();
-    int getNextLevel();
+    int getFromRequiredExpFromLevel(int level);
+    int getToRequiredExpFromLevel(int level);
     void addScrap(int scrap);
     int getScrap();
     IPlayerData load();
