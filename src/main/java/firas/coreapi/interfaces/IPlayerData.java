@@ -19,6 +19,8 @@ public interface IPlayerData {
     void deleteProfile(String nickname, Player player);
     void addPlayerNickname(PlayerNickname playerNickname);
     void addExp(int xp);
+    void setExp(int xp);
+    void updateLevel();
     int getLevel();
     int getExp();
     int getFromRequiredExpFromLevel(int level);
