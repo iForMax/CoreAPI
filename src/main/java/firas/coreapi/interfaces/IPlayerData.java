@@ -31,6 +31,7 @@ public interface IPlayerData {
     IPlayerData load();
     void save();
     String getBadges();
+    void addStats(String stat, int amount);
     void addStats(String stat, long amount);
     void setLastJoin(String date);
     void addSymbol(Symbol symbol);
