@@ -1,16 +1,20 @@
 package firas.coreapi.data;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Symbol {
-    private final String name;
-    private final String displayName;
+    private String name;
+    private String prefix;
+    private String suffix;
 
-    public Symbol(String name, String displayName) {
-        this.name = name;
-        this.displayName = displayName;
+    public String getFullLevel(int level){
+        return prefix+level+suffix;
     }
 }
