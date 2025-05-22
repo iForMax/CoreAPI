@@ -35,6 +35,7 @@ public interface IPlayerData {
     void setLastJoin(String date);
     void addSymbol(Symbol symbol);
     void removeSymbol(Symbol symbol);
+    boolean isOwnSymbol(Symbol symbol);
     String getLastJoin(); // Added getter
     boolean isHideRank();
     String getDisplayLevel();
