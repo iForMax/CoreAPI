@@ -2,6 +2,7 @@ package firas.coreapi.interfaces;
 
 import firas.coreapi.data.Badge;
 import firas.coreapi.data.PlayerNickname;
+import firas.coreapi.data.Symbol;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -32,12 +33,14 @@ public interface IPlayerData {
     String getBadges();
     void addStats(String stat, long amount);
     void setLastJoin(String date);
+    void addSymbol(Symbol symbol);
+    void removeSymbol(Symbol symbol);
     String getLastJoin(); // Added getter
     boolean isHideRank();
     String getDisplayLevel();
-    String getSymbolLevel();
+    Symbol getCurrentSymbolLevel();
     String getBelowTitle();
-    void setSymbolLevel(String symbol);
+    void setSymbolLevel(Symbol symbol);
     List<PlayerNickname> getLogs();
     String getSettings();
     String getHeadTexture();
