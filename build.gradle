@@ -69,7 +69,11 @@ tasks.build.dependsOn tasks.shadowJar
 publishing {
     publications {
         maven(MavenPublication) {
-            from components.java
+            artifact shadowJar // نشر ملف الـ shadow jar فقط
+
+            groupId = 'firas.coreapi'
+            artifactId = 'CoreAPI'
+            version = '1.0-SNAPSHOT'
         }
     }
 }
