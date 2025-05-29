@@ -1,8 +1,9 @@
 package firas.coreapi.interfaces;
 
-import net.md_5.bungee.api.connection.ProxiedPlayer;
+
+import org.bukkit.entity.Player;
 
 public interface BungeeServerable {
-    void sendPlayerToServer(ProxiedPlayer player, String serverName);
+    void sendPlayerToServer(Player player, String serverName);
 
 }
