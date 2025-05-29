@@ -15,11 +15,11 @@
     </properties>
     <repositories>
         <repository>
-            <id>spigotmc-repo</id>
+            <id>spigotmc-snapshots</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>spigotmc-repo</id>
+            <id>md5-releases</id>
             <url>https://repo.md-5.net/content/repositories/releases/</url>
         </repository>
         <repository>
