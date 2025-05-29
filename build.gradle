@@ -19,7 +19,9 @@ java {
 
 repositories {
     mavenLocal()
-
+    maven {
+        url = uri('https://repo.md-5.net/content/repositories/releases/')
+    }
     maven {
         url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
     }
@@ -32,7 +34,7 @@ repositories {
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
     compileOnly 'org.projectlombok:lombok:1.18.30'
-    //compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
 
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
