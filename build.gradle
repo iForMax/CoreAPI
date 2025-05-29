@@ -23,7 +23,13 @@ repositories {
         url = uri('https://repo.md-5.net/content/repositories/releases/')
     }
     maven {
-        url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+
+
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
     }
 
     maven {
