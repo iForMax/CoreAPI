@@ -1,0 +1,65 @@
+/*
+ * This file was generated and modified to include ShadowJar support.
+ */
+
+plugins {
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'firas.coreapi'
+version = '1.0-SNAPSHOT'
+description = 'CoreAPI'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    mavenLocal()
+
+    maven {
+        url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
+    }
+
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
+
+shadowJar {
+    archiveBaseName.set('CoreAPI')
+    archiveClassifier.set('') // No -all in the filename
+    archiveVersion.set(version)
+    destinationDirectory.set(file('D:/iForMax/Plugins/Wystern/SERVER/plugins'))
+    archiveFileName.set('CoreAPI.jar')
+
+}
+
+build.dependsOn shadowJar
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
