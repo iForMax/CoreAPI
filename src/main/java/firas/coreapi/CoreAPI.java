@@ -30,12 +30,19 @@ public class CoreAPI extends JavaPlugin {
     private Protectable protectable;
     private Vanishable vanishable;
     private Serverable serverable;
+    private BungeeServerable bungeeServerable;
 
     public StaffModeable getStaffMode() {
         if (staffMode == null) {
             throw new IllegalStateException(getNull("Staff Mode"));
         }
         return staffMode;
+    }
+    public BungeeServerable getBungeeServerable() {
+        if (bungeeServerable == null) {
+            throw new IllegalStateException(getNull("Bungee Server System"));
+        }
+        return bungeeServerable;
     }
     public Serverable getServerable() {
         if (serverable == null) {
