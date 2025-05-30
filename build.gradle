@@ -18,24 +18,35 @@ java {
 }
 
 repositories {
-    // SpigotMC snapshots (for spigot-api)
+    // ✅ Maven Central (Lombok is here)
+    mavenCentral()
+
+    // ✅ Spigot snapshot repo (for spigot-api)
     maven {
-        name = 'spigotmc-repo'
-        url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
     }
 
-    // PaperMC public repo (in case you use Paper or velocity-related libs)
+    // ✅ Optional: PaperMC repo — restrict it to avoid stealing other dependencies
     maven {
-        name = 'papermc-repo'
-        url = uri('https://papermc.io/repo/repository/maven-public/')
+        url = 'https://papermc.io/repo/repository/maven-public/'
+        content {
+            includeGroup 'io.papermc.paper'
+        }
     }
 
-    // Minecraft official libraries repo
+    // Optional: Sonatype snapshots for net.md-5 (like bungeecord-chat)
     maven {
-        name = 'minecraft-repo'
-        url = uri('https://libraries.minecraft.net/')
+        url = 'https://oss.sonatype.org/content/repositories/snapshots'
+        content {
+            includeGroup 'net.md-5'
+        }
     }
 }
+
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
