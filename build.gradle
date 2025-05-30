@@ -18,18 +18,22 @@ java {
 }
 
 repositories {
-    mavenLocal()
+    // SpigotMC snapshots (for spigot-api)
     maven {
-        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-
-
-        content {
-            includeGroup 'org.bukkit'
-            includeGroup 'org.spigotmc'
-        }
+        name = 'spigotmc-repo'
+        url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
     }
+
+    // PaperMC public repo (in case you use Paper or velocity-related libs)
     maven {
-        url = uri('https://repo.maven.apache.org/maven2/')
+        name = 'papermc-repo'
+        url = uri('https://papermc.io/repo/repository/maven-public/')
+    }
+
+    // Minecraft official libraries repo
+    maven {
+        name = 'minecraft-repo'
+        url = uri('https://libraries.minecraft.net/')
     }
 }
 
