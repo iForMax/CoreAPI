@@ -41,6 +41,7 @@ public interface WorldOptionsGetter {
     boolean isQuitMessage();
     boolean isLobby();
     boolean isPlayerData();
+    boolean isChat();
     Optional<Location> getSpawnLocation();
     void teleportToSpawn(Player player);
     String getJoinMessages();
