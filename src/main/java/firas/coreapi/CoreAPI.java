@@ -30,12 +30,19 @@ public class CoreAPI extends JavaPlugin {
     private Protectable protectable;
     private Vanishable vanishable;
     private Serverable serverable;
+    private ActionBarable actionBarable;
 
     public StaffModeable getStaffMode() {
         if (staffMode == null) {
             throw new IllegalStateException(getNull("Staff Mode"));
         }
         return staffMode;
+    }
+    public ActionBarable getActionBar() {
+        if (actionBarable == null) {
+            throw new IllegalStateException(getNull("Action Bar"));
+        }
+        return actionBarable;
     }
     public Serverable getServerable() {
         if (serverable == null) {

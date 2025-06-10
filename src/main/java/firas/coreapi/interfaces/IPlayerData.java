@@ -16,16 +16,15 @@ public interface IPlayerData {
     void setProfileLastUse(String nickname, String use);
     PlayerNickname getPlayerNickname();
     void setPlayerNickname(PlayerNickname playerNickname); // Added setter
-
     void deleteProfile(String nickname, Player player);
     void addPlayerNickname(PlayerNickname playerNickname);
-    void addExp(int xp);
-    void setExp(int xp);
+    void addExp(long xp,String source);
+    void setExp(long xp,String source);
     void updateLevel();
     int getLevel();
-    int getExp();
-    int getFromRequiredExpFromLevel(int level);
-    int getToRequiredExpFromLevel(int level);
+    long getExp();
+    long getFromRequiredExpFromLevel(int level);
+    long getToRequiredExpFromLevel(int level);
     void addScrap(int scrap);
     int getScrap();
     IPlayerData load();
