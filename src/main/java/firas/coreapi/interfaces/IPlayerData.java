@@ -10,6 +10,7 @@ import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 
 public interface IPlayerData {
     void createProfile(PlayerNickname playerNickname);
@@ -21,6 +22,7 @@ public interface IPlayerData {
     void addExp(long xp,String source);
     void setExp(long xp,String source);
     void updateLevel();
+    void save();
     int getLevel();
     long getExp();
     long getFromRequiredExpFromLevel(int level);
@@ -28,7 +30,7 @@ public interface IPlayerData {
     void addScrap(int scrap);
     int getScrap();
     IPlayerData load();
-    void save();
+    CompletableFuture<Void> saveAnd();
     String getBadges();
     void addStats(String stat, int amount);
     void addStats(String stat, long amount);

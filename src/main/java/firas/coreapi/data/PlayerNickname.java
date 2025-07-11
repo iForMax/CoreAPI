@@ -19,8 +19,8 @@ public class PlayerNickname implements Cloneable {
     private NicknameGameProfile nicknameGameProfile;
 
     private String created;
-    private String use; // When the nickname was first used
-    private String lastUse;  // When the nickname was last used
+    private String use;
+    private String lastUse;
 
 
     public String getNameSkin() {
@@ -47,7 +47,7 @@ public class PlayerNickname implements Cloneable {
     public PlayerNickname clone() {
         try {
             PlayerNickname cloned = (PlayerNickname) super.clone();
-            cloned.uuid = UUID.fromString(uuid.toString()); // Creates a new UUID instance
+            cloned.uuid = UUID.fromString(uuid.toString());
             cloned.use = use;
             cloned.lastUse = lastUse;
             return cloned;
