@@ -1,6 +1,7 @@
 package firas.coreapi.interfaces;
 
 import firas.coreapi.data.Badge;
+import firas.coreapi.data.Jail;
 import firas.coreapi.data.PlayerNickname;
 import firas.coreapi.data.Symbol;
 import org.bukkit.entity.Player;
@@ -31,6 +32,10 @@ public interface IPlayerData {
     int getScrap();
     IPlayerData load();
     CompletableFuture<Void> saveAnd();
+    boolean isInJail();
+    Jail getCurrentJail();
+    String getColorTheme();
+    void setColorTheme(String theme);
     String getBadges();
     void addStats(String stat, int amount);
     void addStats(String stat, long amount);

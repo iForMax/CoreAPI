@@ -6,6 +6,8 @@ import lombok.Setter;
 import org.bson.Document;
 import org.bukkit.Bukkit;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Setter
@@ -14,6 +16,7 @@ public class Jail {
     private final UUID playerId;
     private final String ign;
     private String reason;
+    private List<String> descriptionReason = new ArrayList<>();
     private String jailedBy;
     private UUID jailedByUUID;
     private long jailedAt;
@@ -52,7 +55,6 @@ public class Jail {
         doc.append("jailedByUUID", jailedByUUID != null ? jailedByUUID.toString() : null);
         doc.append("jailedAt", jailedAt);
         doc.append("durationSeconds", durationSeconds);
-
         doc.append("manuallyUnjailed", manuallyUnjailed);
         doc.append("unjailedBy", unjailedBy);
         doc.append("unjailedReason", unjailedReason);
@@ -92,11 +94,9 @@ public class Jail {
 
     public boolean isJailed() {
         if (manuallyUnjailed){
-            System.out.println("manually un jailed");
             return false;
         }
         if (reason == null || jailedBy == null){
-            System.out.println("reason or jailedBy is null");
 
             return false;
         }
@@ -121,7 +121,7 @@ public class Jail {
         ));
     }
     public boolean tryAutoUnjailIfExpired() {
-        if (manuallyUnjailed) return false; // Already manually unjailed
+        if (manuallyUnjailed) return false;
 
         long now = System.currentTimeMillis();
         long endTime = jailedAt + (durationSeconds * 1000);
