@@ -34,6 +34,7 @@ public interface IPlayerData {
     CompletableFuture<Void> saveAnd();
     boolean isInJail();
     Jail getCurrentJail();
+    List<Jail> getJailList();
     String getColorTheme();
     void setColorTheme(String theme);
     String getBadges();
